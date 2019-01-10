@@ -1,0 +1,45 @@
+.cart {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &__heading {
+        color: $color-font-light;
+        font-size: 1.1rem;
+        margin: 0 10rem;
+        padding: .7rem;
+        z-index: 3;
+        border: 1px solid transparent;
+
+        &:hover {
+            cursor: pointer;
+            border: 1px solid $color-border-grey-light;
+            border-bottom: 1px solid $color-white;
+            background-color: $color-white;
+        }
+
+        &:hover + .cart__container {
+            display: block;
+            z-index: 2;
+        }
+
+        @include respond(phone) {
+            margin: 0 2rem;
+        }
+    }
+    
+    &__container {
+        display: none;
+        position: absolute;
+        top: 3rem;
+        right: 10rem;
+        width: 30rem;
+        border: 1px solid $color-border-grey-light;
+        background-color: $color-white;
+
+        @include respond(phone) {
+            right: 2rem;
+            width: calc(100vw - 8rem);
+        }
+    }
+}
